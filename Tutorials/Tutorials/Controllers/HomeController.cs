@@ -11,9 +11,10 @@ namespace Tutorials.Controllers
         //
         // GET: /Home/
 
-        public string Index(string name)
+        public ViewResult Index(string name)
         {
-            return "Name = " + name + "Sur= " + Request.QueryString["surename"];
+            ViewBag.Message = "Name = " + name + "Sur= " + Request.QueryString["surename"];
+            return View();
         }
 
         public string GetDetails(string Id)
